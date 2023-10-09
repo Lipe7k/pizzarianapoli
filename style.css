@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+
+:root{
+    --red:#d63a25;
+    --white:#fff;
+    --dark:#1e1c2a;
+}
+
+body{
+    color: var(--dark);
+    background: var(--white);
+}
+
+.navigation{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background: var(--white);
+    transition: all 0.5s;
+    position: fixed;
+}
+
+.navigation .logo{
+    color: var(--red);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.logo span{
+    color: var(--dark);
+
+}
+
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.navigation a{
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.navigation a:hover{
+    color: var(--red);
+}
+
+ i{
+    cursor: pointer;
+    font-size: 4rem;
+}
+
+.whatsapp-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contato .text-h4{
+    font-size: 20px;
+    color: var(--red);
+    margin-bottom: 1px;
+
+}
+
+
+
+.menu{
+    cursor: pointer;
+    display: none;
+}
+
+.menu.ativo .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu.ativo .bar:nth-child(2){
+    opacity: 0;
+}
+
+.menu.ativo .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.menu .bar{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--dark);
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+
+.menu .bar:nth-child(1), .menu .bar:nth-child(3){
+    background: var(--red);
+}
+
+.home, .sobre, .cardapio{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10%;
+    background: transparent;
+}
+
+
+.contato{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10%;
+    background: transparent;
+}
+
+.home-text, .sobre-text, .cardapio-text, .contato-text{
+    max-width: 37rem;
+
+}
+
+.home-text .text-h4, .cardapio-text .text-h4{
+    font-size: 1.5rem;
+    color: var(--red);
+    margin-bottom: 1rem;
+}
+
+.sobre-text .text-h1, .home-text .text-h1, .cardapio .text-h1, .contato .text-h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 4rem;
+}
+
+.sobre-text p, .home-text p, .cardapio-text p, .contato p{
+    margin-bottom: 4rem;
+
+}
+
+.home-btn{
+    padding: 15px 45px;
+    background: var(--red);
+    color: var(--white);
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.home-btn:hover{
+    background: #fc4c35;
+}
+
+.home-img img, .sobre-img {
+    width: 120%;
+}
+
+.contato-img img{
+    width: 100%;
+}
+
+.cardapio-lista{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    box-shadow: 0px 0.2rem 1rem #696969;
+    padding: 50px;
+    margin-left: 30px;
+    border-radius: 20px;
+
+}
+
+.cardapio-lista h2{
+    color: var(--red);
+}
+
+.contato-img a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--dark);
+    opacity: 0.6;
+}
+
+.rodape{
+    box-shadow: 0 0.2rem 0.5rem;
+}
+
+.rodape h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 785px) {
+    .navigation{
+        padding: 18px 20px;
+    }
+    .menu{
+        display: block;
+    }
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: var(--white);
+        gap: -10px;
+        transition: 0.5s;
+    }
+
+    .nav-menu.ativo{
+        right: 0;
+    }
+
+    .nav-item{
+        margin: 16px 0;
+    }
+
+    .home, .sobre, .cardapio, .contato{
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        gap: 5rem;
+        height: auto;
+    }
+
+    .home .text-h4, .cardapio .text-h4, .contato .text-h4{
+        font-size: 15px;
+    }
+
+    .home .text-h1, .sobre .text-h1, .cardapio .text-h1, .contato .text-h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+
+    .home p, .sobre p, .cardapio p, .contato p{
+        font-size: 15px;
+    }
+
+    .home-img, .sobre-img { 
+        width: 70%;
+    }
+
+    .contato-img img{
+        width: 60%;
+    }
+
+    .cardapio-lista{
+        height: 60%;
+        margin: 0px 0px;
+    }
+
+    .sobre-text p{
+        margin-bottom: 50px;
+    }
+
+    .rodape h3{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 650px){
+    .home-img img, .contato-img img{
+        width: 90%;
+    }
+
+    .rodape h3{
+        font-size: 12px;
+    }
+
+}
+
